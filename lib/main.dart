@@ -11,11 +11,20 @@ class MyApp extends StatelessWidget {
       title: 'Productos App',
       initialRoute: 'home',
       routes: {
-        'login': ( _ ) => LoginScreen(),
-        'home' : ( _ ) => HomeScreen(),
+        'login'   : ( _ ) => LoginScreen(),
+        'home'    : ( _ ) => HomeScreen(),
+        'product' : ( _ ) => ProductScreen(),
       },
       theme: ThemeData.light().copyWith(
-        scaffoldBackgroundColor: Colors.grey[300]
+        scaffoldBackgroundColor: Colors.grey[300],
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          color: Colors.indigo
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.indigo,
+          elevation: 0
+        )
       ),
     );
   }
