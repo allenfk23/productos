@@ -13,6 +13,8 @@ class ProductsService extends ChangeNotifier {
 
   final String _baseUrl = 'autenticacion-kevin-default-rtdb.firebaseio.com';
   final List<Product> products = [];
+  late Product selectedProduct;
+  
   bool isLoading = true;
 
   ProductsService() {

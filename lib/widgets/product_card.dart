@@ -171,14 +171,18 @@ class _Backgroundimage extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(25),
       child: Container(
-      width: double.infinity,
-      height: 400,
-      child: FadeInImage(
-        placeholder: AssetImage('assets/jar-loading.gif'),
-        image: AssetImage(url!),
-        //image: NetworkImage('https://via.placeholder.com/400x300/f6f6f6'),
-        fit: BoxFit.cover,
-        ),
+        width: double.infinity,
+        height: 400,
+        child: url == null
+            ? Image(
+                image: AssetImage("assets/no-image.png"),
+                fit: BoxFit.cover,
+              )
+            : FadeInImage(
+                placeholder: AssetImage('assets/jar-loading.gif'),
+                image: NetworkImage(url!),
+                fit: BoxFit.cover,
+              ),
       ),
     );
   }
